@@ -1,7 +1,10 @@
+#!/usr/bin/env node
+
 const { chain } = require('lodash')
 const getEvents = require('./lib/events')
 const render = require('./lib/render')
-const username = 'zeke'
+const args = process.argv.slice(2)
+const username = args[0]
 
 main()
 
@@ -49,8 +52,6 @@ async function main () {
     openedPullRequests,
     closedPullRequests
   }
-
-  // console.log(openedPullRequests.map(issue => issue))
 
   const template = require('fs').readFileSync('./template.md', 'utf8')
   const output = await render(template, context)

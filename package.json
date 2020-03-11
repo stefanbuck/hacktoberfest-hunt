@@ -1,10 +1,13 @@
 {
+  "name": "recent-github-activity",
+  "version": "1.0.0",
+  "description": "Generate a markdown report of your recent activity on GitHub",
   "dependencies": {
     "@github-docs/render-content": "^1.0.1",
     "@octokit/rest": "^17.0.1",
-    "dotenv": "^8.2.0",
+    "ghauth": "^4.0.0",
     "liquid": "^4.0.0",
-    "liquidjs": "^9.11.1",
     "lodash": "^4.17.15"
-  }
+  },
+  "bin": "index.js"
 }
