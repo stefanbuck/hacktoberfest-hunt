@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@github-docs/render-content": "^1.0.1",
+    "@octokit/rest": "^17.0.1",
+    "dotenv": "^8.2.0",
+    "liquid": "^4.0.0",
+    "liquidjs": "^9.11.1",
+    "lodash": "^4.17.15"
+  }
+}
