@@ -1,6 +1,6 @@
 {
   "name": "recent-github-activity",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "Generate a markdown report of your recent activity on GitHub",
   "dependencies": {
     "@github-docs/render-content": "^1.0.1",
@@ -11,6 +11,7 @@
   },
   "bin": "index.js",
   "devDependencies": {
+    "semantic-release": "^17.0.4",
     "standard": "^14.3.1"
   },
   "scripts": {
