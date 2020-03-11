@@ -9,5 +9,11 @@
     "liquid": "^4.0.0",
     "lodash": "^4.17.15"
   },
-  "bin": "index.js"
+  "bin": "index.js",
+  "devDependencies": {
+    "standard": "^14.3.1"
+  },
+  "scripts": {
+    "test": "standard"
+  }
 }
