@@ -42,14 +42,14 @@ async function main () {
     .value()
 
   const context = {
-    eventTypes, 
+    eventTypes,
     repos,
     closedIssues,
-    openedIssues, 
+    openedIssues,
     openedPullRequests,
     closedPullRequests
   }
-  
+
   // console.log(openedPullRequests.map(issue => issue))
 
   const template = require('fs').readFileSync('./template.md', 'utf8')
