@@ -53,7 +53,7 @@ async function main () {
     closedPullRequests
   }
 
-  const template = require('fs').readFileSync('./template.md', 'utf8')
+  const template = require('fs').readFileSync(require('path').join(__dirname, './template.md'), 'utf8')
   const output = await render(template, context)
 
   console.log(output)
