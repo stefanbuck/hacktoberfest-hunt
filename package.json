@@ -1,6 +1,6 @@
 {
   "name": "recent-github-activity",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Generate a markdown report of your recent activity on GitHub",
   "dependencies": {
     "@github-docs/render-content": "^1.0.1",
