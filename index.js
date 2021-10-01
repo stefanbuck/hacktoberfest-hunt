@@ -19,9 +19,10 @@ async function main () {
 
     const repos = res.filter(repo => repo.topics.includes('hacktoberfest'))
 
+    console.log('From %s of your starred repositories %s are participating in Hacktoberfest\n', starredRepos.length, repos.length)
+
     repos.forEach(repo => {
       console.log(repo.html_url)
     })
-    console.log('\n%s out of %s are participating in Hacktoberfest', repos.length, starredRepos.length)
   })
 }
