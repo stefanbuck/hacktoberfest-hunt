@@ -2,6 +2,10 @@
   "name": "hacktoberfest-hunt",
   "version": "0.1.0",
   "description": "Find projects that participate in Hacktoberfest within your starred repositories.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanbuck/hacktoberfest-hunt"
+  },
   "dependencies": {
     "@octokit/rest": "^17.0.1",
     "async": "^3.2.1",
