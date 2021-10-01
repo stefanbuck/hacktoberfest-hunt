@@ -1,14 +1,11 @@
 {
-  "name": "recent-github-activity",
-  "version": "0.0.0-development",
-  "description": "Generate a markdown report of your recent activity on GitHub",
+  "name": "hacktoberfest-hunt",
+  "version": "0.1.0",
+  "description": "Find projects that participate in Hacktoberfest within your starred repositories.",
   "dependencies": {
-    "@github-docs/render-content": "^1.0.1",
     "@octokit/rest": "^17.0.1",
-    "ghauth": "^4.0.0",
-    "liquid": "^4.0.0",
-    "lodash": "^4.17.15",
-    "time-ago": "^0.2.1"
+    "async": "^3.2.1",
+    "ghauth": "^4.0.0"
   },
   "bin": "index.js",
   "devDependencies": {

@@ -1,60 +1,27 @@
 #!/usr/bin/env node
 
-const { chain } = require('lodash')
-const getEvents = require('./lib/events')
-const render = require('./lib/render')
+const getStarredRepos = require('./lib/starred')
+const getTopic = require('./lib/topics')
+const { mapLimit } = require('async')
 const args = process.argv.slice(2)
 const username = args[0]
 
 main()
 
 async function main () {
-  const events = await getEvents(username)
+  const starredRepos = await getStarredRepos(username)
 
-  const eventTypes = chain(events)
-    .map(event => event.type)
-    .uniq()
-    .sort()
-    .value()
+  mapLimit(starredRepos, 20, getTopic, (err, res) => {
+    if (err) {
+      console.log(err)
+      process.exit(1)
+    }
 
-  const repos = chain(events)
-    .filter(event => event.repo)
-    .map(event => event.repo.name)
-    .uniq()
-    .sort()
-    .value()
+    const repos = res.filter(repo => repo.topics.includes('hacktoberfest'))
 
-  const closedIssues = chain(events)
-    .filter(event => event.type === 'IssuesEvent')
-    .filter(event => event.payload.action === 'closed')
-    .value()
-
-  const openedIssues = chain(events)
-    .filter(event => event.type === 'IssuesEvent')
-    .filter(event => event.payload.action === 'opened')
-    .value()
-
-  const openedPullRequests = chain(events)
-    .filter(event => event.type === 'PullRequestEvent')
-    .filter(event => event.payload.action === 'opened')
-    .value()
-
-  const closedPullRequests = chain(events)
-    .filter(event => event.type === 'PullRequestEvent')
-    .filter(event => event.payload.action === 'closed')
-    .value()
-
-  const context = {
-    eventTypes,
-    repos,
-    closedIssues,
-    openedIssues,
-    openedPullRequests,
-    closedPullRequests
-  }
-
-  const template = require('fs').readFileSync(require('path').join(__dirname, './template.md'), 'utf8')
-  const output = await render(template, context)
-
-  process.stdout.write(output)
+    repos.forEach(repo => {
+      console.log(repo.html_url)
+    })
+    console.log('\n%s out of %s are participating in Hacktoberfest', repos.length, starredRepos.length)
+  })
 }
