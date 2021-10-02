@@ -1,6 +1,6 @@
 {
   "name": "hacktoberfest-hunt",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Find projects that participate in Hacktoberfest within your starred repositories.",
   "repository": {
     "type": "git",
