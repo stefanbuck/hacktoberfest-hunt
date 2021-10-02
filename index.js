@@ -3,13 +3,19 @@
 const getStarredRepos = require('./lib/starred')
 const getTopic = require('./lib/topics')
 const { mapLimit } = require('async')
+const Spinnies = require('spinnies')
 const args = process.argv.slice(2)
 const username = args[0]
 
 main()
 
 async function main () {
+  const spinnies = new Spinnies()
+  spinnies.add('loading', { text: 'Retrieving your starred repositories...' })
+
   const starredRepos = await getStarredRepos(username)
+  
+  spinnies.succeed('loading', { text: 'Retrieved your starred repositories.' });
 
   mapLimit(starredRepos, 20, getTopic, (err, res) => {
     if (err) {
