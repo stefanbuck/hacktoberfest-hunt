@@ -3,20 +3,20 @@ name: Release npm package
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: "12.x"
+          node-version: 'lts/*'
       - run: npm install
       - run: npm test
-      - run: npx semantic-release
+      - run: npx semantic-release --branches main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
