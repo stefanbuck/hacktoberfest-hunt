@@ -19,6 +19,7 @@ async function main () {
 
   mapLimit(starredRepos, 20, getTopic, (err, res) => {
     if (err) {
+      spinnies.fail('loading', { text: 'An error occurred' })
       console.log(err)
       process.exit(1)
     }
