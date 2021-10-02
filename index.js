@@ -11,11 +11,11 @@ main()
 
 async function main () {
   const spinnies = new Spinnies()
-  spinnies.add('loading', { text: 'Retrieving your starred repositories...' })
+  const starredRepos = await getStarredRepos(username, spinnies)
 
-  const starredRepos = await getStarredRepos(username)
-  
-  spinnies.succeed('loading', { text: 'Retrieved your starred repositories.' });
+  let completedRepoCount = 0;
+
+  spinnies.add('loading', { text: 'Checking repositories for Hacktoberfest topic...' })
 
   mapLimit(starredRepos, 20, getTopic, (err, res) => {
     if (err) {
@@ -29,6 +29,12 @@ async function main () {
 
     repos.forEach(repo => {
       console.log(repo.html_url)
+
+      completedRepoCount++
+      
+      if(completedRepoCount === repos.length){
+        spinnies.succeed('loading', { text: 'Done' })
+      }
     })
   })
 }
