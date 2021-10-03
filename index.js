@@ -26,7 +26,7 @@ async function main () {
 
     console.log('From %s of your starred repositories %s are participating in Hacktoberfest\n', starredRepos.length, repos.length)
 
-    for(const repo of repos){
+    for (const repo of repos) {
       console.log(repo.html_url)
     }
 
