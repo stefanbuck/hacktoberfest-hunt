@@ -9,7 +9,7 @@
   "dependencies": {
     "@octokit/rest": "^17.0.1",
     "async": "^3.2.1",
-    "ghauth": "^4.0.0",
+    "ghauth": "^5.0.1",
     "spinnies": "^0.5.1"
   },
   "bin": "index.js",
