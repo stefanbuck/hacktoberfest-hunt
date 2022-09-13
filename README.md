@@ -12,7 +12,7 @@ The first time you run this command, you'll be asked to log in to GitHub using y
 
 
 ## Preview
-<img width="400" src="https://user-images.githubusercontent.com/1393946/135694068-504c3849-257c-4593-ab7e-3347060d3e95.png" />
+<img width="100%" src="https://user-images.githubusercontent.com/1393946/190019696-5a84f061-3ab0-43b1-9580-1f22a990f435.png" />
 
 
 # Special thanks to
