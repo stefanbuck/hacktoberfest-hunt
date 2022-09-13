@@ -7,15 +7,15 @@
     "url": "https://github.com/stefanbuck/hacktoberfest-hunt"
   },
   "dependencies": {
-    "@octokit/rest": "^17.0.1",
-    "async": "^3.2.1",
+    "@octokit/rest": "^19.0.4",
+    "async": "^3.2.4",
     "ghauth": "^5.0.1",
     "spinnies": "^0.5.1"
   },
   "bin": "index.js",
   "devDependencies": {
-    "semantic-release": "^17.0.4",
-    "standard": "^14.3.1"
+    "semantic-release": "^19.0.5",
+    "standard": "^17.0.0"
   },
   "scripts": {
     "test": "standard"
