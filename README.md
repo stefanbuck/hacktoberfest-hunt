@@ -1,6 +1,14 @@
 # hacktoberfest-hunt
 
-Find projects that participate in [Hacktoberfest](https://hacktoberfest.digitalocean.com/) within your starred repositories.
+
+GitHub support queries on your profile page, which allows you to get a list of all started repositories that participate in Hacktoberfest. Thanks for the hint @NotWearingPants.
+
+https://github.com/stefanbuck?q=topic:hacktoberfest&tab=stars
+
+---
+
+
+Find projects that participate in [Hacktoberfest](https://hacktoberfest.digitalocean.com/) within your starred repositories. If you still want to use the cli read on.
 
 ## Usage
 
